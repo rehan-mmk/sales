@@ -1,0 +1,33 @@
+@media print {
+
+    @page {
+        size: auto;
+        margin: 0;
+    }
+
+    #navbar{
+        display: none;
+    }
+
+    #ConfirmationModal {
+        display: none;
+    }
+
+    #InvoiceContent {
+        display: none;
+    }
+
+    #footer {
+        display: none;
+    }
+
+
+    .PrintButton {
+        display: none;
+    }
+
+
+}
+
+
+
