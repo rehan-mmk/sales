@@ -48,8 +48,8 @@ else {
 
 <nav id="navbar" class="navbar navbar-expand bg-gradient-primary topbar mb-4" style="color: #fff;">
 
-    <a class="sidebar-brand d-flex align-items-center justify-content-center"  style="text-decoration: none; font-size: 18px; font-weight: bold;">
-        <div class="sidebar-brand-text ml-3">SNF</div>
+    <a href="dashboard.php" class="sidebar-brand d-flex align-items-center justify-content-center"  style="text-decoration: none; font-size: 18px; font-weight: bold; color: #fff;">
+        <div class="sidebar-brand-text ml-3"> Dashboard </div>
     </a>
 
     <!-- Topbar Navbar -->
@@ -196,7 +196,10 @@ else {
 
         <?php
         if($_SESSION['role'] == 1){ ?>
-            <div style="text-align: right; padding: 10px 5px 0 0;"> <a href="register.php">Register</a> </div>
+            <div style="display: flex; justify-content: space-between">
+                <div style="text-align: right; padding: 10px 5px 0 0;"> <a href="register.php">Register</a> </div>
+                <div style="text-align: right; padding: 10px 5px 0 0;"> <a href="add-store.php">Add Store</a> </div>
+            </div>
         <?php 
             }
         ?>
@@ -440,7 +443,7 @@ else {
         var payable = $('#payable').val();
 
         $.ajax({
-            url: 'ProcessForm.php',
+            url: 'process.php',
             type: 'POST',
             data: { 
                 FormStoreId: FormStoreId, 
