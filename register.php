@@ -164,7 +164,7 @@ if($_SESSION['role'] !== 1) {
             </div>
         </div>
 
-        <button type="submit" name="submit" value="register" class="btn btn-block bg-gradient-success" style="margin: 30px 0; color: #fff; border: none; border-radius: 0; font-size: 22px;">
+        <button type="submit" name="submit" value="register" class="btn btn-block bg-gradient-success" style="margin: 60px 0; color: #fff; border: none; border-radius: 0; font-size: 22px;">
             Register
         </button>
     </form>

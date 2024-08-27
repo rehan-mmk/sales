@@ -64,7 +64,7 @@ if (isset($_SESSION['email'])) {
 
     <form method="post" action="auth.php" class="form">
 
-        <div class="form-group row" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="form-group row" style="margin-top: 80px; margin-bottom: 20px;">
             <div class="col-4 text-left gradient-text-green">
                 <h6 style="padding-top: 20px;"> Email </h6>
             </div>
@@ -77,7 +77,7 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
 
-        <div class="form-group row mb-2">
+        <div class="form-group row mb-2" style="margin-top: 50px;">
             <div class="col-4 text-left gradient-text-green">
                 <h6 style="padding-top: 20px;"> Password </h6>
             </div>
@@ -91,7 +91,7 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
 
-        <a href="#" style="display: block; text-align: right; margin-top: 40px;"> Forgot Password</a>
+        <a href="#" style="display: block; text-align: right; margin-top: 70px; margin-bottom: 30px;"> Forgot Password</a>
 
         
 
@@ -106,51 +106,51 @@ if (isset($_SESSION['email'])) {
 
 <script>
     document.getElementById('togglePassword').addEventListener('click', function () {
-    const passwordField = document.getElementById('password');
-    const togglePassword = document.getElementById('togglePassword');
-    const togglePasswordVisible = document.getElementById('togglePasswordVisible');
+        const passwordField = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
+        const togglePasswordVisible = document.getElementById('togglePasswordVisible');
 
-    if (passwordField.type === 'password') {
-        passwordField.type = 'text';
-        togglePassword.style.display = 'none';
-        togglePasswordVisible.style.display = 'block';
-    } else {
-        passwordField.type = 'password';
-    }
-});
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            togglePassword.style.display = 'none';
+            togglePasswordVisible.style.display = 'block';
+        } else {
+            passwordField.type = 'password';
+        }
+    });
 
-document.getElementById('togglePasswordVisible').addEventListener('click', function () {
-    const passwordField = document.getElementById('password');
-    const togglePassword = document.getElementById('togglePassword');
-    const togglePasswordVisible = document.getElementById('togglePasswordVisible');
+    document.getElementById('togglePasswordVisible').addEventListener('click', function () {
+        const passwordField = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
+        const togglePasswordVisible = document.getElementById('togglePasswordVisible');
 
-    if (passwordField.type === 'text') {
-        passwordField.type = 'password';
-        togglePassword.style.display = 'block';
-        togglePasswordVisible.style.display = 'none';
-    } else {
-        passwordField.type = 'text';
-    }
-});
-
-
+        if (passwordField.type === 'text') {
+            passwordField.type = 'password';
+            togglePassword.style.display = 'block';
+            togglePasswordVisible.style.display = 'none';
+        } else {
+            passwordField.type = 'text';
+        }
+    });
 
 
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    var messages = document.getElementsByClassName('message');
-    Array.from(messages).forEach(function(message) {
-        setTimeout(function() {
-            message.classList.add('fade-out');
-        }, 4000);
 
-        message.addEventListener('transitionend', function() {
-            message.style.display = 'none';
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var messages = document.getElementsByClassName('message');
+        Array.from(messages).forEach(function(message) {
+            setTimeout(function() {
+                message.classList.add('fade-out');
+            }, 4000);
+
+            message.addEventListener('transitionend', function() {
+                message.style.display = 'none';
+            });
         });
     });
-});
 
 </script>
 
