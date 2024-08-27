@@ -9,11 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $today = date("d-F-Y g:i a");
 
 
+    ///////////////////////////////// Add Dashboard Payments 
     if(isset($_POST['FormStoreId'])) {
         $StoreId = $_POST['FormStoreId'];
-        $total = $_POST['total'];
-        $received = $_POST['received'];
-        $payable = $_POST['payable'];
+        $total = (float) $_POST['total'];
+        $received = (float) $_POST['received'];
+        $payable = (float) $_POST['payable'];
 
 
         $sql = "INSERT INTO payments (store_id, total, received, payable, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)";
@@ -96,6 +97,79 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'message' => 'Payment not added! Please try again later',
             ]);
         }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////////////////// Add Store
+    if (isset($_POST['submit']) && $_POST['submit'] === 'addstore') {
+
+        $name = trim($_POST['StoreName']);
+        $total = (float) $_POST['total'];
+        $received = (float) $_POST['received'];
+        $payable = (float) $_POST['payable'];
+
+        if (empty($name)) {
+            $_SESSION['Status'] = 2;
+            $_SESSION['message'] = "Store name is required.";
+            header("Location: add-store.php");
+            exit();
+        }
+
+        $conn->begin_transaction(); 
+
+        try {
+            $sql = "INSERT INTO stores (name, created_at, updated_at) VALUES (?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception('Error in preparing the SQL statement: ' . $conn->error);
+            }
+            $stmt->bind_param("sss", $name, $today, $today);
+            if (!$stmt->execute()) {
+                throw new Exception('Error executing the SQL statement: ' . $stmt->error);
+            }
+            $storeId = $stmt->insert_id; // Get the last inserted store ID
+            $stmt->close();
+
+            // Insert into payments table
+            $sql = "INSERT INTO payments (store_id, total, received, payable, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception('Error in preparing the SQL statement: ' . $conn->error);
+            }
+            $stmt->bind_param("idddss", $storeId, $total, $received, $payable, $today, $today);
+            if (!$stmt->execute()) {
+                throw new Exception('Error executing the SQL statement: ' . $stmt->error);
+            }
+            $stmt->close();
+
+            $conn->commit(); // Commit the transaction
+
+            $_SESSION['Status'] = 1;
+            $_SESSION['message'] = "Store and payment details added successfully.";
+
+        } 
+        catch (Exception $e) {
+            $conn->rollback(); // Roll back the transaction on error
+            $_SESSION['Status'] = 2;
+            $_SESSION['message'] = "Failed to add store and payment details. Please try again.";
+        }
+
+        header("Location: add-store.php");
+        exit();
     }
 
 } 

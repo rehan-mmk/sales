@@ -59,7 +59,7 @@ if($_SESSION['role'] !== 1) {
 <nav id="navbar" class="navbar navbar-expand bg-gradient-primary topbar mb-4" style="color: #fff;">
 
     <a href="dashboard.php" class="sidebar-brand d-flex align-items-center justify-content-center"  style="text-decoration: none; font-size: 18px; font-weight: bold; color: #fff;">
-        <div class="sidebar-brand-text ml-3">SNF</div>
+        <div class="sidebar-brand-text ml-3"> Dashboard </div>
     </a>
 
     <!-- Topbar Navbar -->
