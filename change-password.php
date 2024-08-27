@@ -113,7 +113,7 @@ if (!isset($_SESSION['email'])) {
     <form method="post" action="auth.php" class="form">
 
 
-        <div class="form-group row mb-2">
+        <div class="form-group row mb-2" style="padding-top: 10px;">
             <div class="col-4 text-left gradient-text-green">
                 <h6 style="padding-top: 20px;"> Current Password </h6>
             </div>
@@ -135,7 +135,7 @@ if (!isset($_SESSION['email'])) {
         ?>
         
         
-        <div class="form-group row mb-2">
+        <div class="form-group row mb-2" style="margin-top: 20px;">
             <div class="col-4 text-left gradient-text-green">
                 <h6 style="padding-top: 20px;"> New Password </h6>
             </div>
@@ -150,7 +150,7 @@ if (!isset($_SESSION['email'])) {
         </div>  
 
 
-        <div class="form-group row mb-2">
+        <div class="form-group row mb-2" style="margin-top: 20px;">
             <div class="col-4 text-left gradient-text-green">
                 <h6 style="padding-top: 20px;"> Confirm New Password </h6>
             </div>
@@ -175,7 +175,7 @@ if (!isset($_SESSION['email'])) {
         
 
 
-        <button type="submit" name="submit" value="changepassword" class="btn btn-block bg-gradient-success" style="margin: 30px 0 0 0; color: #fff; border: none; border-radius: 0; font-size: 22px;">
+        <button type="submit" name="submit" value="changepassword" class="btn btn-block bg-gradient-success" style="margin: 70px 0 0 0; color: #fff; border: none; border-radius: 0; font-size: 22px;">
             Change Password
         </button>
     </form>

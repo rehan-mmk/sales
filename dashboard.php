@@ -80,9 +80,8 @@ else {
 
 </nav>
 
-    
                     
-<div id="InvoiceContent"> 
+<div id="InvoiceContent" > 
 
 
     <?php
@@ -215,7 +214,7 @@ else {
 
 
 <p id="footer" style="text-align: center; color: #fff; padding: 10px; position: fixed; bottom: 0; 
-    left: 0; right: 0;" class="bg-gradient-primary">
+    left: 0; right: 0; z-index: 1000;" class="bg-gradient-primary">
     Copyright © SNF Cosmetics 2024
 </p>
 

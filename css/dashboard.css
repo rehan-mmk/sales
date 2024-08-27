@@ -1,11 +1,6 @@
 
 
-
 #InvoiceContent {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: #fff; 
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 20px;
@@ -13,19 +8,25 @@
 
 
 
+ 
 
 
-
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 450px) {
     #InvoiceContent {
         width: 90%;
+        height: 500px; /* Adjust height as needed */
+        overflow-y: scroll;
+        margin-top: 40px;
+        margin-bottom: 80px;
+        padding: 20px;
     }
 }
 
 
-@media screen and (min-width: 381px) {
+@media screen and (min-width: 451px) {
     #InvoiceContent {
         width: 90%;
+        
     }
 }
 
@@ -33,6 +34,7 @@
 @media screen and (min-width: 540px) {
     #InvoiceContent {
         width: 70%;
+       
     }
 }
 
@@ -40,6 +42,7 @@
 @media screen and (min-width: 810px) {
     #InvoiceContent {
         width: 50%;
+        
     }
 }
 
@@ -47,5 +50,6 @@
 @media screen and (min-width: 1100px) {
     #InvoiceContent {
         width: 25%;
+       
     }
 }
