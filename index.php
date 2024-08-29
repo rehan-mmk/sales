@@ -53,45 +53,50 @@ if (isset($_SESSION['email'])) {
                     
 <div id="InvoiceContent" style="padding-top: 0;"> 
 
-    <h1 style="text-align: center; margin: 10px 0 20px 0;" class="gradient-text-green">Login</h1>
+    <h1 style="text-align: center; margin: 10px 0 40px 0;" class="gradient-text-green">Login</h1>
     <?php
         if (isset($_SESSION['error'])) {
             echo '<p class="message" style="color: red; text-align: center;">'.$_SESSION['error'].'</p>';
             unset($_SESSION['error']);
         }
     ?>
-    <div style="margin-bottom: 60px;"></div>
+    
 
     <form method="post" action="auth.php" class="form">
 
-        <div class="form-group row" style="margin-top: 80px; margin-bottom: 20px;">
-            <div class="col-4 text-left gradient-text-green">
-                <h6 style="padding-top: 20px;"> Email </h6>
+
+
+
+        <div class="form-group row mb-2" style="margin-top: 20px;">
+            <div class="col-12 text-left gradient-text-green">
+                <h6 class="pt-2"> Email </h6>
             </div>
 
-            <div class="col-8">
+            <div class="col-12">
                 <div class="input-group mb-2">
-                    <input type="email" name="email" value="<?php if (isset($_SESSION['old_email'])) { echo htmlspecialchars($_SESSION['old_email']); unset($_SESSION['old_email']); } ?>" class="form-control" style="border-top: 0; border-left: 0; border-right: 0;" required>
-                    <i style="position: absolute; right: 5px; bottom: 5px;" class="fas fa-fw fa-envelope"></i> 
+                    <input type="email" name="email" class="form-control" required>
+                    <i style="position: absolute; right: 5px; top: 10px;" class="fas fa-fw fa-envelope"></i>
                 </div>
             </div>
         </div>
 
-        <div class="form-group row mb-2" style="margin-top: 50px;">
-            <div class="col-4 text-left gradient-text-green">
-                <h6 style="padding-top: 20px;"> Password </h6>
+
+        <div class="form-group row mb-2" style="margin-top: 20px;">
+            <div class="col-12 text-left gradient-text-green">
+                <h6 class="pt-2"> Password </h6>
             </div>
 
-            <div class="col-8">
+            <div class="col-12">
                 <div class="input-group mb-2">
-                    <input type="password" name="password"  id="password" value="<?php if (isset($_SESSION['old_password'])) { echo htmlspecialchars($_SESSION['old_password']); unset($_SESSION['old_password']); } ?>" class="form-control" style="border-top: 0; border-left: 0; border-right: 0;" required>
-                    <i id="togglePassword" style="position: absolute; right: 5px; bottom: 5px; cursor: pointer;" class="fas fa-fw fa-eye-slash"></i> 
-                    <i id="togglePasswordVisible" style="display:none; position: absolute; right: 5px; bottom: 5px; cursor: pointer;" class="fas fa-fw fa-eye"></i> 
+                    <input type="password" name="password" id="password" class="form-control" required>
+                    <i id="togglePassword" style="position: absolute; right: 5px; top: 10px; cursor: pointer;" class="fas fa-fw fa-eye-slash"></i> 
+                    <i id="togglePasswordVisible" style="display:none; position: absolute; right: 5px; top: 10px; cursor: pointer;" class="fas fa-fw fa-eye"></i> 
                 </div>
             </div>
         </div>
 
-        <a href="#" style="display: block; text-align: right; margin-top: 70px; margin-bottom: 30px;"> Forgot Password</a>
+
+        <a href="forget-password.php" style="display: block; text-align: right; margin-top: 50px; margin-bottom: 30px;"> Forgot Password</a>
 
         
 
