@@ -101,7 +101,7 @@ else {
 
     <?php
         date_default_timezone_set('Asia/Karachi');
-        $text = "Today's date is : "; 
+        $text = "Date : "; 
         $today = date("d-F-Y g:i a");
         echo '<p style="text-align: center;" class="gradient-text-green">'. $text . $today . '</p>';
     ?>
