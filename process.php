@@ -121,6 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $total = (float) $_POST['total'];
         $received = (float) $_POST['received'];
         $payable = (float) $_POST['payable'];
+        $contact = trim($_POST['StoreContact']);
 
         if (empty($name)) {
             $_SESSION['Status'] = 2;
@@ -132,12 +133,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn->begin_transaction(); 
 
         try {
-            $sql = "INSERT INTO stores (name, created_at, updated_at) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO stores (name, contact, created_at, updated_at) VALUES (?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             if (!$stmt) {
                 throw new Exception('Error in preparing the SQL statement: ' . $conn->error);
             }
-            $stmt->bind_param("sss", $name, $today, $today);
+            $stmt->bind_param("ssss", $name, $contact, $today, $today);
             if (!$stmt->execute()) {
                 throw new Exception('Error executing the SQL statement: ' . $stmt->error);
             }

@@ -115,6 +115,19 @@ if($_SESSION['role'] !== 1) {
         </div>
 
 
+        <div class="form-group row mb-2" style="margin-top: 20px;">
+            <div class="col-4 text-left gradient-text-green">
+                <h6 class="pt-2"> Contact </h6>
+            </div>
+
+            <div class="col-8">
+                <div class="input-group mb-2">
+                    <input type="text" name="StoreContact" class="form-control">
+                </div>
+            </div>
+        </div>
+
+
         <p style="width: 100%; text-align: center; margin: 10px 0">
             ---- Payment Details ----
         </p>
@@ -127,7 +140,7 @@ if($_SESSION['role'] !== 1) {
 
             <div class="col-8">
                 <div class="input-group mb-2">
-                    <input type="text" name="total" class="form-control">
+                    <input type="text" name="total" class="form-control" required>
                 </div>
             </div>
         </div>
@@ -141,7 +154,7 @@ if($_SESSION['role'] !== 1) {
 
             <div class="col-8">
                 <div class="input-group mb-2">
-                    <input type="text" name="received" class="form-control">
+                    <input type="text" name="received" class="form-control" required>
                 </div>
             </div>
         </div>
@@ -155,7 +168,7 @@ if($_SESSION['role'] !== 1) {
 
             <div class="col-8">
                 <div class="input-group mb-2">
-                    <input type="text" name="payable" class="form-control">
+                    <input type="text" name="payable" class="form-control" required>
                 </div>
             </div>
         </div>
